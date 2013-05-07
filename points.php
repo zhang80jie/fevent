@@ -39,6 +39,8 @@ class points {
 		//$userarray = QQAPIModel::get_user_info_simple('BDF65CDFCC0520CD84BD4C4C31A0A241','14BC1E251B3BD33718298CE652E302B7');
 		$userarray = QQAPIModel :: get_user_info_simple($_SESSION['openid'], $_SESSION['openkey']);
 
+		//echo '***'.QQAPIModel :: update_user_info($userarray,$_SESSION['openid']).'***';
+
 		$usepointslist = $this->_model->getGroupPointDetail($_SESSION['openid']);
 
 		$pointslist = $this->_model->getPointList();	
