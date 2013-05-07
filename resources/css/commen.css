@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin:0px;
+	padding:0px;
+}
+body {
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#404040;
+	background:#f4f4f4;
+}
+a {
+	color:#404040;
+	text-decoration:none;
+}
+a:hover {
+	color:#000;
+	text-decoration:none;
+}
+.clear {
+	clear:both;
+}
+h3, h4 {
+	font-weight:normal;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#fff;
+}
+ul {
+	list-style:none;
+}
+a img {
+	border:none;
+}
+div {
+	margin:0px auto;
+}
+#top_bg {
+	width:760px;
+	background:url(../images/body_bg.jpg) no-repeat;
+	min-height:484px; margin-top:-20px; padding-bottom:30px;
+}
+#join_us {
+	padding:20px 13px 0px 665px;
+}
+#join_us a  {
+	color:#fff;
+	background:url(../images/join_us.png) no-repeat;
+	width:60px;
+	height:24px;
+	display:block;
+	font-size:14px;
+	padding:0px 0px 0px 23px;
+}

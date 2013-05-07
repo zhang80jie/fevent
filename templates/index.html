@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="辨认水果" />
+<meta name="description" lang="en" content="一个辨认水果平台" />
+<title>猜猜猜水果版</title>
+<link href="/caicai/resources/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/caicai/resources/js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div class="header"><img src="/caicai/resources/img/11.jpg" width="760" height="159" border="0" usemap="#Map" />
+<map name="Map" id="Map"><area shape="rect" coords="687,6,763,18" href="http://www.baidu.com" /><area shape="rect" coords="3,19,758,156" href="http://www.newi799.com" /></map></div>
+<div class="middle">
+	<div class="left"><img id="fruitInfo" src="<?php echo $fruitInfo['image_url'];?>" width="386" height="350" data="<?php echo $fruitInfo['fruit_id'];?>"/></div>
+	<div class='right'>
+		<div class="inner">
+			<table width="100%">
+			<tr>
+			  <td width="25%"><span style="color:#414141; font-size:16px;">时间：<span id="countSeconds">0</span>秒</span></td>
+			  <td width="75%"><a href="javascript:void(0);"><img src="/caicai/resources/img/begin.gif" width="102" height="37" id="toStartTimer"/></a></td>
+			</tr>
+			</table>
+		</div>
+		<div class="inner">
+		  <table width="100%" height="38">
+			  <tr>
+				  <td width="33%" class="zq01"><span style="color:#414141;">正确<span id="rightTag"><?php echo $result['right'];?></span></span></td>
+				  <td width="33%" class="cw01"><span style="color:#414141;">错误<span id="wrongTag"><?php echo $result['wrong'];?></span></span></td>
+				  <td width="" class="zql01"><span style="color:#414141;">正确率<span id="rateTag"><?php echo $result['rate'];?></span>%</span></td>
+			  </tr>
+		  </table>
+		</div>
+		<div class="inner">
+			<table width="100%" height="30">
+				<tr>
+				  <td width="40%" class="font16">输入左侧水果名称:</td>
+				  <td width="60%" class="inputing">
+				  	<form action="" name="" method="">
+						<input name="" type="text" class="inputsr" id="fruitNameTmp"/>
+					</form>
+				  </td>
+				</tr>
+			</table>
+		</div>
+		<div class="last">
+			<table width="100%">
+			<tr>
+			  <td width="102" height="37" class="savebtn"><a href="javascript:void(0);"><img src="/caicai/resources/img/next.gif" id="getNext"/></a></td>
+			  <td width="134" height="37" style="float:left;"><a href="javascript:void(0);"><img src="/caicai/resources/img/cjcx.gif" id="goQuery"/></a></td>
+			  <td class="cl"></td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="cl"></div>
+</body>
+</html>
+<script type='text/javascript'>
+$(function(){
+	
+	//alert($("#countSeconds").text());
+	
+	var setTimer = null;
+	function startTimer()
+	{
+		setTimer = setTimeout(timeCounter,1000);
+	}
+	
+	function stopTimer(){
+		clearTimeout(setTimer);
+	}
+	
+	
+	function timeCounter()
+	{
+		var curSec = parseInt($("#countSeconds").text());
+		$("#countSeconds").text(curSec+1);
+		stopTimer();
+		startTimer();
+	}
+	
+	//点击开始 启动计时器
+	$("#toStartTimer").click(function(){
+		startTimer();
+		$(this).hide();
+	});
+	
+	$("#getNext").click(function(){
+		var fName = $.trim($("#fruitNameTmp").val());
+		if(fName.length <=0){
+			alert('请输入名称');
+			return false;
+		}
+		
+		//如果未开始计时则开启计时
+		if(setTimer == null){
+			$("#toStartTimer").click();
+		}
+		
+		$.post('/caicai/index.php',{'act':'answer','fName':fName},
+				function(ret){
+					$('#fruitInfo').attr('src',ret.nextQuest.image_url);
+					$("#rightTag").text(ret.result.right);
+					$("#wrongTag").text(ret.result.wrong);
+					$("#rateTag").text(ret.result.rate);
+		},'json');
+		
+		$("#fruitNameTmp").val('');
+	});
+	
+	$("#goQuery").click(function(){
+		window.location.href="/caicai/index.php?act=goQeury";
+	});
+});
+</script>

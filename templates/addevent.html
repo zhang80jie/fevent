@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/fevent/resources/css/commen.css" rel="stylesheet"
+	type="text/css" />
+<link href="/fevent/resources/css/css.css" rel="stylesheet"
+	type="text/css" />
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('#join_us a,.con_list h3,.con_hot h3, ,.index_con,.con_list,background');  
+</script> <![endif]-->
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('*');  
+</script> <![endif]-->
+<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript"
+	src="/fevent/resources/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/fevent/resources/js/event.js"></script>
+<script type="text/javascript" src="/fevent/resources/js/points.js"></script>
+<title>未来大事件</title>
+</head>
+<body>
+
+	<div id="top_bg">
+
+		<div id="join_us">
+			<a href="#">邀请好友</a>
+		</div>
+
+		<div class="q_search">
+
+			<div class="q_incident">
+
+				<h3></h3>
+
+				<div class="q_ser_con">
+
+				<?php echo  $result;?>
+					
+					<form method="post" action="addevent.php">
+
+						<div class="qq_name">
+							<em>事件类别:</em><span>
+								<div class="qun_mo_cen">
+									<select name="content_catalog" size="1" id="content_catalog">
+									</select> &nbsp;
+								</div>
+							</span>
+							<div class="clear"></div>
+						</div>
+
+						<div class="qq_name">
+							<em>事件名称:</em><span>
+								<div class="qun_n_cen">
+
+
+									<input type="text" class="qun_name_wr" name="event_name" />
+								</div>
+							</span>
+							<div class="clear"></div>
+						</div>
+
+						<div class="qq_more">
+							<em>事件描述:</em><span>
+
+								<div class="qun_mo_cen">
+									<textarea class="qun_ji_wr" name="event_detail"></textarea>
+								</div>
+
+							</span>
+							<div class="clear"></div>
+						</div>
+
+
+						<div class="qq_more">
+							<em>开始时间:</em><span>
+								<div class="qun_n_cen">
+									<input class="qun_name_wr" type="text" name="event_date"
+										id="d412"
+										onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2013-01-01 00:00:00',maxDate:'2028-03-10 20:59:30'})"
+										value="2013-03-09 11:00:00" />
+								</div>
+							</span>
+							<div class="clear"></div>
+						</div>
+
+
+						<div class="qq_name">
+							<em>发布范围:</em><span>
+								<div>
+									<input type="radio" name="arrange" value="1" checked>
+										公开 &nbsp;&nbsp;&nbsp; <input type=radio name="arrange"
+										value="2">群组 <select id="group" name="groupid"></select>
+											&nbsp;&nbsp;&nbsp; <input type=radio name="arrange" value="0">
+										个人 
+								</div>
+							</span>
+
+
+							<div class="clear"></div>
+						</div>
+
+						<div>
+							<input class="c_s_so" type="submit" value="添加事件" name="submit" />
+							<a href="indexlist.php" class="go_index">返回主页</a>
+							<div class="clear"></div>
+						</div>
+
+					</form>
+
+					<div class="me_cre_list">
+						<h4>
+							<img src="images/me_inci.gif" width="722" height="36" />
+						</h4>
+						<div class="create_qun_list">
+
+							<?php if(!empty($addedEventList)):?>
+							<?php foreach($addedEventList as $addevent):?>
+							<div class="incid_list01">
+								<div class="inci_li_left">
+									<a href="#"><img src="images/inci_01.gif" width="60"
+										height="60" />
+										<h5>Saradia</h5> </a>
+								</div>
+								<div class="inci_li_right">
+									<h2>
+										<?php echo $addevent['event_desc'];?>
+									</h2>
+									<span>开始时间:<em> <?php echo  $addevent['event_happened_date'];?>
+									</em></span>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<?php endforeach;?>
+							<?php endif; ?>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="q_s_bottom"></div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

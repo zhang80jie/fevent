@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/fevent/resources/css/commen.css" rel="stylesheet"
+	type="text/css" />
+<link href="/fevent/resources/css/css.css" rel="stylesheet"
+	type="text/css" />
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('#join_us a,.con_list h3,.con_hot h3, ,.index_con,.con_list,background');  
+</script> <![endif]--> 
+ <!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('*');  
+</script> <![endif]--> 
+<title>未来大事件</title>
+<script type="text/javascript" src="/fevent/resources/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/fevent/resources/js/indexlist.js"></script>
+</head>
+<body>
+<div id="top_bg">
+  <div id="join_us"><a href="#">邀请好友</a></div>
+ 
+    <div class="q_search">
+     <h3> </h3>
+     <div class="q_ser_con">
+      <div class="q_se_tit">
+	<form action="searchgroup.php" method="post" >
+			 <select class="sec_la" name="selectby" >
+			<option value="0">群组名</option>
+			<option value="1">群组号</option>
+			</select>
+			<input type="text" class="shu" name="keyword"/><input type="submit" class="q_s_so" name="submit" value="搜索"/> 
+			 <a  href="addgroup.php" class="cre_qun">新建群组</a> 
+			
+</form>
+   <div class="srar_show">搜索结果：</div>
+      <div class="show_list">
+         <ul>
+         <?php echo $result; ?>
+   		<?php 
+					$i= 0 ;	
+					if(!empty($searchResultList)):?>
+					<?php foreach($searchResultList as $group):?>
+					<?php 
+						$i++;
+						if($i%3==0){
+							echo ' <li class="cen_show_l"><span><div class="groupclass">'.$group['group_id'].'</div></span><a href="#" style="color:#404040;">'.$group['group_name'].'</a></li>';
+						}else{
+							echo ' <li><span><div class="groupclass">'.$group['group_id'].'</div></span><a href="#" style="color:#404040;">'.$group['group_name'].'</a></span></li>';
+						 }
+					?>
+					<?php endforeach;?>
+					<?php endif; ?>		
+   
+        <div class="clear"></div>
+       </ul>
+       
+   		</div>
+            <div class="create_q_list"><a href="#">热门群组列表</a><div class="clear"></div></div> 
+     
+      <div class="show_list">
+       <ul>
+       			<?php 
+					$i= 0 ;	
+					if(!empty($groupHotList)):?>
+					<?php foreach($groupHotList as $group):?>
+					<?php 
+						$i++;
+						if($i%3==0){
+							echo ' <li class="cen_show_l"><span><div class="groupclass">'.$group['group_id'].'</div></span><a href="#" style="color:#404040;">'.$group['group_name'].'</a></li>';
+						}else{
+							echo ' <li><span><div class="groupclass">'.$group['group_id'].'</div></span><a href="#" style="color:#404040;">'.$group['group_name'].'</a></span></li>';
+						 }
+					?>
+					<?php endforeach;?>
+					<?php endif; ?>					
+      
+         
+         <div class="clear"></div>
+       </ul>
+     </div>
+     
+         <div class="create_q_list"><a href="#">新建群组列表</a><div class="clear"></div></div> 
+     
+      <div class="show_list">
+       <ul>
+      			 <?php 
+					$i= 0 ;	
+					if(!empty($groupNewCreatedList)):?>
+					<?php foreach($groupNewCreatedList as $group):?>
+					<?php 
+						$i++;
+						if($i%3==0){
+							echo ' <li class="cen_show_l"><span><div class="groupclass">'.$group['group_id'].'</div></span><a href="#" style="color:#404040;">'.$group['group_name'].'</a></li>';
+						}else{
+							echo ' <li><span><div class="groupclass">'.$group['group_id'].'</div></span><a href="#" style="color:#404040;">'.$group['group_name'].'</a></span></li>';
+						 }
+					?>
+					<?php endforeach;?>
+					<?php endif; ?>		
+         <div class="clear"></div>
+       </ul>
+     </div>
+     
+     
+     
+      </div>
+      
+      
+     </div>
+
+    <div class="bott_link">
+      </div>
+    </div>
+ 
+   </div>
+   
+</div>
+</body>
+
+</html>

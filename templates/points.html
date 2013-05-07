@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/fevent/resources/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/fevent/resources/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/fevent/resources/js/points.js"></script>
+</head>
+<body>
+
+<center><h1>积分详情页</center>
+
+<?php
+echo $_SESSION['openid'] . '***<br />';
+?>
+
+<?php  echo 'Result'.$result.'<br />'; ?>
+<form action="points.php?param=usepoints" method="post">
+
+推广群组<select id="group" name="groupid"></select> 使用积分 <input type="text" name="points"/> <input type="submit" value="使用"/>
+
+</form>
+<img src="<?php  echo $userarray['figureurl'] ?>"  alt="用户头像"/>
+
+<div id ="zz"></div>
+<p></p>
+<br />
+<?php 
+print_r($usepointslist);
+
+?>
+
+<?php if(!empty($usepointslist)):?>
+<?php foreach($usepointslist as $userpoints):?>
+	<?php echo $userpoints['group_name'].'***'.$userpoints['group_points'].'***'.$userpoints['group_points_used'].'<br />';?>
+<?php endforeach;?>
+<?php endif;?>
+
+
+
+积分榜：<br />
+<?php if(!empty($pointslist)):?>
+<?php foreach($pointslist as $ps):?>
+	<?php echo $ps['points'].'***'.$ps['openid'].'<br />'; ?>
+<?php endforeach; ?>
+<?php endif; ?>
+
+
+</body>
+</html>
