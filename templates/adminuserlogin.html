@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/fevent/resources/css/commen.css" rel="stylesheet"
+	type="text/css" />
+<link href="/fevent/resources/css/css.css" rel="stylesheet"
+	type="text/css" />
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('#join_us a,.con_list h3,.con_hot h3, ,.index_con,.con_list,background');  
+</script> <![endif]-->
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('*');  
+</script> <![endif]-->
+<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript"
+	src="/fevent/resources/js/jquery-1.9.1.min.js"></script>
+<title>未来大事件</title>
+</head>
+<body>
+
+	<div id="top_bg">
+
+		<div id="join_us">
+			
+		</div>
+
+		<div class="q_search">
+
+			<div class="q_incident">
+
+				<h3></h3>
+
+				<div class="q_ser_con">
+
+				<?php echo  $result;?>
+					
+					<form method="post" action="adminLogin.php">
+
+
+						<div class="qq_name">
+							<em>账号:</em><span>
+								<div class="qun_n_cen">
+
+
+									<input type="text" class="qun_name_wr" name="username" />
+								</div>
+							</span>
+							<div class="clear"></div>
+						</div>
+						<br />
+						<div class="qq_name">
+							<em>密码:</em><span>
+								<div class="qun_n_cen">
+
+
+									<input type="password" class="qun_name_wr" name="passsword" />
+								</div>
+							</span>
+							<div class="clear"></div>
+						</div>
+<div class="clear"></div>
+						
+                          <div>
+							<input class="c_s_so" type="submit" value="登录" name="submit" />
+							<a href="indexlist.php" class="go_index">返回主页</a>
+							<div class="clear"></div>
+						</div>
+
+							
+						</div>
+
+						
+
+					</form>
+
+					
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

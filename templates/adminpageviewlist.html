@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/fevent/resources/css/commen.css" rel="stylesheet"
+	type="text/css" />
+<link href="/fevent/resources/css/css.css" rel="stylesheet"
+	type="text/css" />
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('#join_us a,.con_list h3,.con_hot h3, ,.index_con,.con_list,background');  
+</script> <![endif]-->
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('*');  
+</script> <![endif]-->
+<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript"
+	src="/fevent/resources/js/jquery-1.9.1.min.js"></script>
+<title>未来大事件</title>
+</head>
+<body>
+
+	<div id="top_bg">
+
+		<div id="join_us">
+			
+		</div>
+
+		<div class="q_search">
+
+			<div class="q_incident">
+
+				<h3></h3>
+
+				<div class="q_ser_con">
+							<a href="adminEventList.php"><font color="red">审核内容</font></a>&nbsp;<a href="adminPageView.php"><font color="red">浏览状况</font></a>
+					<?php if(!empty($viewnumlist)):?>
+							<?php foreach($viewnumlist as $viewnum):?>
+							<div class="incid_list01">
+								<div class="inci_li_right">
+									<h2>
+										页面：<?php echo $viewnum['page_file_desc'];?>&nbsp;数量：
+										<?php echo $viewnum['page_view_num'];?>
+									</h2>
+									
+								</div>
+								<div class="clear"></div>
+							</div>
+							<?php endforeach;?>
+							<?php endif; ?>
+
+					
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
