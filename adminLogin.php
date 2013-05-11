@@ -17,7 +17,7 @@ class adminLogin{
 		$this->_model = adminUserModel :: getInstace();
 		
 	}
-
+ 
 	public function dispatch() {
 		
 	if (isset ($_POST["submit"])) {

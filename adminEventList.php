@@ -19,7 +19,7 @@ class adminEventList{
 	}
 
 	public function dispatch() {
-		
+		 
 		if (empty($_SESSION['username'])){
 			$result ="你还未登陆,请登录后发布";
 			include './templates/adminuserlogin.html';
