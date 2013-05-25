@@ -3,30 +3,245 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/fevent/resources/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/fevent/resources/css/commen.css" rel="stylesheet" type="text/css" />
+<link href="/fevent/resources/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/fevent/resources/css/css1.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/fevent/resources/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="/fevent/resources/js/points.js"></script>
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('#join_us a,.con_list h3,.con_hot h3, ,.index_con,.con_list,background');  
+</script> <![endif]-->
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('*');  
+</script> <![endif]-->
+<title>大事件切图</title>
 </head>
+
 <body>
+<div id="top_bg">
 
-<center><h1>个人详情页</center>
+  <div id="join_us"><!-- <a href="#">邀请好友</a> --></div> 
+  <div class="hou_qun_xiang">
+              <h3 class="hou_top_titt hou_top_titt01"><dl class="hou_hi">你好！<?php echo $userinfo['nickname'];?></dl></h3>
+    <div class="hou_qun_ccon">
+    <!-- 
+      <div class="hou_peo_tit">四川地震，寻找每一个生命迹象，让我们一起加入进来！</div> -->
+      <!--left begin-->
+          <div class="hou_qun_left">
+          <div class="hou_ll_ttop" ></div>
+          <!--left table begin-->
+          <div class="hou_ll_center">
+            <div class="hou_shi_table">
+              <table width="540" border="0"  class="hou_qun_taa" cellpadding="0" cellspacing="0">
+                <tr class="hou_tr_qun">
+                  <th scope="col">事件名称</th>
+                  <th scope="col">开始时间</th>
+                  <th scope="col">关注</th>
+                  <th scope="col">评论</th>
+                  <th scope="col"  >详情</th>
+                </tr>
+                
+                
+                     <?php if(!empty($eventsList)):?>
+	   <?php 
+ 		$i=0;
+		foreach($eventsList as $event):
+		$i++;
+		if($i%2==0){
+        	echo ' <tr class="hou_tr_qun_cen">';
+		}else{
+			echo ' <tr class="hou_tr_qun_cen_blue">';
+		}
+			
+		echo ' <td>'.$event['event_desc'].'</td>';
+		echo ' <td>'.$event['event_happened_date'].'</td>';
+		echo ' <td>'.$event['attention_count'].'</td>';
+		echo ' <td>'.$event['event_comment_count'].'</td>';
+		echo ' <td  class="hou_lin"  ><a href="userinfo.php">详情</a></td>';
 
-<?php echo $result;?>
-
-<div id ="zz"></div>
-<p></p>
-<br />
-
-<?php  print_r($userinfo);?>
-<br />
-<?php  print_r($joinGroupList);?>
-<br />
-<?php  print_r($GroupExtendedList);?>
-<br />
-
-<?php  print_r($eventsList);?>
-<br />
-
- <?php echo $getpageinfo['pagecode']; ?>
-<a href="indexlist.php">首页</a>
+		echo '  </tr>';
+		?>
+      <?php endforeach;?>
+	  <?php endif;?>
+                 <!-- 
+                 
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                 
+              
+              
+                <tr class="hou_tr_qun_cen">
+                  <td>事件一</td>
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                  <td  class="hou_lin">详情</td>
+                </tr>
+                <tr  class="hou_tr_qun_cen_blue">
+                  <td>事件一</td>
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                  <td  class="hou_lin">详情</td>
+                </tr>
+                <tr class="hou_tr_qun_cen">
+                  <td>事件一</td>
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                  <td  class="hou_lin">详情</td>
+                </tr>
+                <tr class="hou_tr_qun_cen_blue">
+                  <td>事件一</td>
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                  <td  class="hou_lin">详情</td>
+                </tr>
+                <tr class="hou_tr_qun_cen">
+                  <td>事件一</td>
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                  <td  class="hou_lin">详情</td>
+                </tr>
+                <tr class="hou_tr_qun_cen_blue">
+                  <td>事件一</td>
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                  <td  class="hou_lin">详情</td>
+                </tr>
+                <tr class="hou_tr_qun_cen">
+                  <td>事件一</td>
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                  <td  class="hou_lin">详情</td>
+                </tr>
+                <tr class="hou_tr_qun_cen_blue">
+                  <td>事件一</td>
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                  <td  class="hou_lin">详情</td>
+                </tr>
+                <tr class="hou_tr_qun_cen">
+                  <td>事件一</td>
+                  <td>2013-05-01-00:00:00</td>
+                  <td>57</td>
+                  <td>87</td>
+                  <td  class="hou_lin">详情</td>
+                </tr>
+                 -->
+                <tr class="hou_tr_qun_b">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+             <!--left table end-->
+               <!--left fenye beging-->
+            <div class="fenye hou_fenye">
+            <!--  
+            <span class="fenye_le"><a href="#">上一页</a></span><em><a href="#">1</a></em><em ><a style="background:url(images/fenye_a_hover.gif) no-repeat; width:36px; height:42px; line-height:42px; display:block; color:#fff;" href="#">2</a></em><em><a href="#">3</a></em><em><a href="#">4</a></em><em><a href="#">5</a></em><em><a href="#">6</a></em><em><a href="#">7</a></em><em><a href="#">8</a></em><em><a href="#">9</a></em> <em><a href="#">10</a></em><span class="fenye_ri"><a href="#">下一页</a></span>
+            -->    <?php echo $getpageinfo['pagecode']; ?>
+              <div class="clear"></div>
+            </div>
+                     <!--left fenye end-->
+             
+           </div> 
+            <div class="hou_bbboom"></div>
+            
+          </div>
+           <!--left end-->
+           <!--right begin-->
+      <div class="hou_qun_right">
+        <div class="con_hot hou_con_hot_01">
+          <div class="hou_my_info">
+            <div class="hou_my_in_top"  ></div>
+            <div class="hou_my_in_cen">
+              <div class="hou_in_jie">
+                <div class="hou_lei"> <?php echo '<img src="'.$userinfo['figureurl'].'" width="60" height="60" />'; ?></div>
+                <div class="hou_in_lis"><?php echo $userinfo['nickname'];?><br /><br />
+                  性别：<?php echo $userinfo['gender'];?><br />
+                </div>
+                <div class="clear"></div>
+              </div>
+              <!-- 
+              <div class="hou_inf_time"></div> -->
+               
+            </div>
+            <div class="hou_my_in_bottom"></div>
+          </div>
+          <!--  
+          <div class="hou_chengyuan">
+            <h3 class="hou_info_chengyuna">成员信息(18)</h3>
+            <div class="hhto_list">
+              <ul>
+                
+                <li><a href="#" style="color:#333;">深圳爱乐团小组</a></li>
+                 <li><a href="#" style="color:#333;">深圳爱乐团小组</a></li>
+                  <li><a href="#" style="color:#333;">深圳爱乐团小组</a></li>
+                  
+              </ul>
+            </div>
+            
+            <div class="hot_bbottom"></div>
+          </div>-->
+          <div class="hou_chengyuan">
+            <h3 class="hou_info_tuijian">群组</h3>
+            <div class="hhto_list">
+              <ul>
+              
+		         <?php if(!empty($joinGroupList)):?>
+			 		  <?php 
+			 		  $i=1;
+						foreach($joinGroupList as $group):
+		 				//	echo ' <li><span><div class="groupclass">'.$group['group_id'].'</div></span><a href="#" style="color:#404040;">'.$group['group_name'].'('.$group['num'].')</a></li>';
+							echo '  <li><span><a href="#"></a></span><em>'.$i++.'</em><a href="#">'.$group['group_name'].'</a></li>';
+						?>
+		    	  <?php endforeach;?>
+			  	<?php endif;?>
+			  	<!--  
+                <li><span><a href="#"><img src="images/green_butt.png" width="17" height="15" /></a></span><em>1</em><a href="#">热门群组</a></li>
+                <li><span><a href="#"><img src="images/green_butt.png" width="17" height="15" /></a></span> <em>2</em><a href="#">热门月光族</a></li>
+                <li><span><a href="#"><img src="images/green_butt.png" width="17" height="15" /></a></span><em>3</em><a href="#">热门群组家族</a> </li>
+                -->
+              </ul>
+            </div>
+            <div class="hot_bbottom"></div>
+          </div>
+          <div class="hou_chengyuan">
+            <h3 class="hou_info_tuijian">推荐群组</h3>
+            <div class="hhto_list">
+              <ul>
+                <li><span><a href="#"><img src="images/green_butt.png" width="17" height="15" /></a></span><em>1</em><a href="#">深圳爱乐团小组</a></li>
+                <li><span><a href="#"><img src="images/green_butt.png" width="17" height="15" /></a></span> <em>2</em><a href="#">北京月光族</a></li>
+                <li><span><a href="#"><img src="images/green_butt.png" width="17" height="15" /></a></span><em>3</em><a href="#">湖北武汉土家族</a> </li>
+              </ul>
+            </div>
+            <div class="hot_bbottom"></div>
+          </div>
+        </div>
+      </div>
+      <!--right begin-->
+      <div class="clear"></div>
+      
+    </div>
+  </div>
+  <div class="hou_bottom"><a href="indexlist.php" class="hou_index_oth">首页</a> <a href="addevent.php" class="hou_index_oth">新增事件</a><a href="addevent.php" class="hou_index_oth">发布大事件</a>
+    <div class="clear"></div>
+  </div>
+</div>
+</div>
 </body>
 </html>

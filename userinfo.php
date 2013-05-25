@@ -42,10 +42,11 @@ class userInfo{
 		} else {
 			$result='***********************************';
 			$userinfo = QQAPIModel :: get_user_info_simple($_SESSION['openid'], $_SESSION['openkey']);
+			
 			//$eventListCreated = $this->_eventmodel->getEventList($_SESSION['openid']);	
 			$joinGroupList =  $this->_groupmodel->getJoinedGroupListByOpenid($_SESSION['openid']);	
 			$GroupExtendedList =$this->_pointmodel->getGroupExtendedList();
-			$sql ="select f.event_id,f.event_desc,f.event_happened_date,f.attention_count ,f.event_detail from fevent_eventcontent  f where date_format(f.event_happened_date,'%Y%m%d') > date_format((curdate() - interval 3 day),'%Y%m%d') and f.event_createdby_openid='".$_SESSION['openid']."'  order by f.attention_count desc" ;
+			$sql ="select f.event_id,f.event_desc,f.event_happened_date,f.attention_count ,f.event_detail,f.event_comment_count from fevent_eventcontent  f where date_format(f.event_happened_date,'%Y%m%d') > date_format((curdate() - interval 3 day),'%Y%m%d') and f.event_createdby_openid='".$_SESSION['openid']."'  order by f.attention_count desc" ;
 			$eventsListTotal = $this->_model->getEventListNum($sql);
 			$getpageinfo = self::page($page,$eventsListTotal,$phpfile);
 			$sql.=$getpageinfo['sqllimit'];//组合完整的SQL语句
