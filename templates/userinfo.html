@@ -224,9 +224,20 @@ DD_belatedPNG.fix('*');
             <h3 class="hou_info_tuijian">推荐群组</h3>
             <div class="hhto_list">
               <ul>
+                <?php if(!empty($GroupExtendedList)):?>
+			 		  <?php 
+			 		  $i=1;
+						foreach($GroupExtendedList as $group):
+		 				//	echo ' <li><span><div class="groupclass">'.$group['group_id'].'</div></span><a href="#" style="color:#404040;">'.$group['group_name'].'('.$group['num'].')</a></li>';
+							echo '  <li><span><a href="#"></a></span><em>'.$i++.'</em><a href="#">'.$group['group_name'].'</a></li>';
+						?>
+		    	  <?php endforeach;?>
+			  	<?php endif;?>
+                 <!-- 
                 <li><span><a href="#"><img src="images/green_butt.png" width="17" height="15" /></a></span><em>1</em><a href="#">深圳爱乐团小组</a></li>
                 <li><span><a href="#"><img src="images/green_butt.png" width="17" height="15" /></a></span> <em>2</em><a href="#">北京月光族</a></li>
                 <li><span><a href="#"><img src="images/green_butt.png" width="17" height="15" /></a></span><em>3</em><a href="#">湖北武汉土家族</a> </li>
+               -->
               </ul>
             </div>
             <div class="hot_bbottom"></div>

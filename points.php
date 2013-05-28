@@ -33,7 +33,7 @@ class points {
 		// print_r(QQAPIModel::get_user_info_simple($_SESSION['openid'],$_SESSION['openkey']));
 		//echo $_SESSION['openid'].'<br />';   //BDF65CDFCC0520CD84BD4C4C31A0A241   14BC1E251B3BD33718298CE652E302B7
 		//echo $_SESSION['openkey'].'<br />';
-		print_r(QQAPIModel :: get_user_info_simple($_SESSION['openid'], $_SESSION['openkey']));
+	//	print_r(QQAPIModel :: get_user_info_simple($_SESSION['openid'], $_SESSION['openkey']));
 		//print_r(QQAPIModel::get_user_info_simple('BDF65CDFCC0520CD84BD4C4C31A0A241','14BC1E251B3BD33718298CE652E302B7'));
 
 		//$userarray = QQAPIModel::get_user_info_simple('BDF65CDFCC0520CD84BD4C4C31A0A241','14BC1E251B3BD33718298CE652E302B7');

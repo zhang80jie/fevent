@@ -1,50 +1,227 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/fevent/resources/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/fevent/resources/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="/fevent/resources/js/points.js"></script>
+<link href="/fevent/resources/css/commen.css" rel="stylesheet" type="text/css" />
+<link href="/fevent/resources/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/fevent/resources/css/css1.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('*');  
+</script> <![endif]-->
+<!--[if IE 6]>
+<script src="DD_belatedPNG.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('*');  
+</script> <![endif]-->
+<title>大事件切图</title>
 </head>
+.
 <body>
+<div id="top_bg">
+  <div id="join_us"><!--<a href="#">邀请好友</a>--></div>
+  <div class="hou_qun_xiang">
+     <h3 class=" hou_top_titt hou_top_titt01">
+    
+       <dl class="hou_hi">你好！<?php echo $userarray['nickname']; ?></dl>
+    
+    </h3>
+    <div class="hou_qun_ccon">
+      <div class="hou_qun_left">
+      <div class="hou_ll_ttop" style="height:10px;"></div>
+         
+      <div class="hou_ll_center">
+       <div class="hou_tui_guang">
+         <h3 class="hou_tui_g_tit">推广群组</h3>
+         <div class="hou_jifen_form">
+           <div class="hou_jifen_tab">
+             <select class="hou_tab_xiang  hou_hou_jifen_tab"   >
+              <option>群组一
+               <option>群组一
+                <option>群组一
+               </select>
+          <em class="hou_jifen_inout"> 
+          积分数量
+          <input type="text" class="hou_jifen_input" value="输入积分量" />
+          <input type="button" value="使用" class="hou_tijiao">
+          </em> 
+           
+           </div>
+         </div>
+       </div>
+       <div class="hou_shi_table">
+          <table width="540" border="0"  class="hou_qun_taa" cellpadding="0" cellspacing="0">
+             <tr class="hou_tr_qun">
+              <th scope="col"  >推广群组</th>
+               <th scope="col" colspan="2">计划使用积分量</th>
+             <th colspan="2">已使用</th>
+             
+            </tr>
+            
+              <?php if(!empty($usepointslist)):?>
+			  <?php 
+			 	$i=0;
+				foreach($usepointslist as $up):
+				if($i++%2==0){
+					echo '<tr class="hou_tr_qun">';
+				}else{
+					echo '<tr>';
+				}
+				echo '<td>'.$up['group_name'].'</td>';
+				echo '<td colspan="2">'.$up['points'].'</td>';
+				echo '<td colspan="2">'.$up['group_points_used'].'</td>';
+				echo '</tr>'
+				?>
+				<?php endforeach;?>
+	<?php endif;?>
+            <!--
+            <tr class="hou_tr_qun">
+              <th scope="col"  >推广群组</th>
+               <th scope="col" colspan="2">计划使用积分量</th>
+             <th colspan="2">已使用</th>
+             
+            </tr>
+            <tr class="hou_tr_qun_cen_blue">
+              <td>群组名2</td>
+              <td  colspan="2">12300000</td>
+              <td colspan="2">4000</td>
+            </tr>
+            
+            <tr class="hou_tr_qun_cen">
+          <td>群组名2</td>
+              <td colspan="2">340000</td>
+              
+             <td colspan="2">300</td>
+            </tr>
+              <tr class="hou_tr_qun_cen_blue">
+              <td>群组名2</td>
+              <td  colspan="2">12300000</td>
+              <td colspan="2">4000</td>
+            </tr>
+           
+            -->
+          </table>
+        </div>
+             <div class="hou_ji_shuoming"><h3 class="hou_tui_g_tit">积分使用说明</h3>
+         <p>群组推广：用户可以用于自己所建立的群组的推广，获得更多人的关注与加入，以后将推出更多使用渠道...</p></div> 
+         
+          <div class="hou_ji_shuoming"><h3 class="hou_tui_g_tit">积分获的途径</h3>
+         <table width=" " border="0" cellpadding="0" cellspacing="0" class="hou_ji_tujing">
+  <tr>
+    <th scope="col" class="hou_caoz">用户操作</th>
+    <th scope="col">获得积分值</th>
+  </tr>
+  <tr>
+    <td>发布大事件(范围：公开)获得途径</td>
+    <td>5</td>
+  </tr>
+    <tr class="hou_tr_qun_cen_blue">
+    <td>发布大事件(范围：群组)获得途径</td>
+    <td>4</td>
+  </tr>
+   <tr>
+    <td>评论事件</td>
+    <td>3</td>
+  </tr>
+ <tr  class="hou_tr_qun_cen_blue">
+    <td>关注事件</td>
+    <td>2</td>
+  </tr>
+ <tr>
+    <td>参与升级计划提交意见</td>
+    <td>1</td>
+  </tr>
+</table>
 
-<center><h1>积分详情页</center>
+       </div>
+       </div>
+         <div class="hou_bbboom"></div>
+      <div class="clear"></div>
+    </div>
+    <div class="hou_qun_right">
+        <div class="con_hot hou_con_hot_01">
+          <div class="hou_my_info">
+            <div class="hou_my_in_top"></div>
+            <div class="hou_my_in_cen">
+              <div class="hou_in_jie">
+                <div class="hou_lei"> <img src="/fevent/resources/images/hou_my_info_tou.gif" width="60" height="60" /></div>
+                <div class="hou_in_lis"><?php echo $userarray['nickname']; ?><br />
+                  性别：<?php echo $userarray['gender']; ?><br />
+                 </div>
+                <div class="clear"></div>
+              </div>
+            <div class="hou_inf_time">创建时间：</div>
+              <div class="hou_inf_fen"><div class="hou_fen">积分</div>
+              <div class="hou_yong"><a href="points.php">使用</a></div>
+              
+              <div class="clear"></div></div>
+            </div>
+            <div class="hou_my_in_bottom"></div>
+          </div>
+          <div class="hou_chengyuan">
+            <h3 class="hou_info_create_q">积分榜中榜</h3>
+            <div class="hhto_list">
+             <table width=" " border="0" cellpadding="0" cellspacing="0" class="hou_crtea_tab">
+  <tr>
+    <th scope="col">呢   称</th>
+     <th scope="col">积   分</th>
+  </tr>
+   <?php if(!empty($pointslist)):?>
+			  <?php 
+			 	$i=0;
+				foreach($pointslist as $p):
+				if($i++%2==0){
+					echo '<tr class="hou_create_blue">';
+				}else{
+					echo '<tr>';
+				}
+				echo '<td>'.$p['nickname'].'</td>';
+				echo '<td>'.$p['points'].'</td>';
+				echo '</tr>'
+				?>
+				<?php endforeach;?>
+	<?php endif;?>
+  <!--
+  <tr>
+    <td>飞翔的企鹅</td>
+    <td>800000</td>
+  </tr>
 
-<?php
-echo $_SESSION['openid'] . '***<br />';
-?>
-
-<?php  echo 'Result'.$result.'<br />'; ?>
-<form action="points.php?param=usepoints" method="post">
-
-推广群组<select id="group" name="groupid"></select> 使用积分 <input type="text" name="points"/> <input type="submit" value="使用"/>
-
-</form>
-<img src="<?php  echo $userarray['figureurl'] ?>"  alt="用户头像"/>
-
-<div id ="zz"></div>
-<p></p>
-<br />
-<?php 
-print_r($usepointslist);
-
-?>
-
-<?php if(!empty($usepointslist)):?>
-<?php foreach($usepointslist as $userpoints):?>
-	<?php echo $userpoints['group_name'].'***'.$userpoints['group_points'].'***'.$userpoints['group_points_used'].'<br />';?>
-<?php endforeach;?>
-<?php endif;?>
-
-
-
-积分榜：<br />
-<?php if(!empty($pointslist)):?>
-<?php foreach($pointslist as $ps):?>
-	<?php echo $ps['points'].'***'.$ps['openid'].'<br />'; ?>
-<?php endforeach; ?>
-<?php endif; ?>
-
-
+   <td>飞翔的企鹅</td>
+    <td>800000</td>
+  </tr>
+ <tr>
+    <td>飞翔的企鹅</td>
+    <td>800000</td>
+  </tr>
+<tr class="hou_create_blue">
+    <td>飞翔的企鹅</td>
+    <td>800000</td>
+  </tr>
+  
+<tr>
+    <td>飞翔的企鹅</td>
+    <td>800000</td>
+  </tr>
+<tr class="hou_create_blue">
+      <td>飞翔的企鹅</td>
+    <td>800000</td>
+  </tr>-->
+</table>
+            </div>
+            <div class="hot_bbottom"></div>
+          </div>
+           
+           
+        </div>
+      </div>
+      <div class="clear"></div>
+  </div>
+   <div class="hou_bottom"><a href="indexlist.php" class="hou_index_oth">首页</a> <a href="addgroup" class="hou_index_oth">创建群组</a>
+    <div class="clear"></div>
+  </div>
+</div>
+</div>
 </body>
 </html>
